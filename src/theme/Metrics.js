@@ -9,7 +9,7 @@ const metrics = {
   searchBarHeight: 30,
   screenWidth: sWidth,
   screenHeight: sHeight,
-  navBarHeight: Platform.OS === 'ios' ? 40   : 60,
+  navBarHeight: Platform.OS === 'ios' ? 44   : 60,
   tabBarHeight: 50,
   defaultMargin: dMargin,
   defaultPadding: dMargin,

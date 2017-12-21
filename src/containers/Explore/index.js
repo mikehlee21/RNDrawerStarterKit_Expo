@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import { View, Alert, BackHandler, ScrollView, TouchableOpacity, FlatList, Keyboard, Image, Text } from 'react-native';
+import { View, TouchableOpacity, FlatList, Image, Text } from 'react-native';
 import { connect } from 'react-redux';
 import I18n from 'react-native-i18n';
 import NavigationBar from 'react-native-navbar';
 import { Styles, Colors, Metrics, Fonts } from '@theme/';
 import Types from '@actions/actionTypes';
-import { Icon } from 'native-base';
-import LeftButton from '@components/LeftButton';
+import NavLeftButton from '@components/NavLeftButton';
+import { LinearGradient } from 'expo';
 
 class Explore extends Component {
 	constructor(props) {
@@ -27,11 +27,17 @@ class Explore extends Component {
 				<NavigationBar
 					statusBar={{ style: 'light-content' }}
 					style={Styles.nav}
-					title={null}
+					title={
+						<LinearGradient
+							colors={['#CA5B58', '#EAC5A3']}
+							start={[0, 0.5]}
+							end={[1, 0.5]}
+							style={{ width: '100%', height: Metrics.navBarHeight + Metrics.statusBarHeight, marginBottom: -7 }}>
+						</LinearGradient>
+					}
 					tintColor={Colors.brandPrimary}
-					leftButton={<LeftButton onPress={()=>{this.props.navigation.navigate('DrawerOpen')}}/>}
+					leftButton={<NavLeftButton onPress={()=>{this.props.navigation.navigate('DrawerOpen')}}/>}
 				/>
-
 				<View style={{ flex: 1, backgroundColor: 'blue' }} />
 			</View>
 		);
@@ -46,8 +52,7 @@ function mapDispatchToProps(dispatch) {
 
 function mapStateToProps(state) {
 	const globals = state.get('globals');
-	const navigator = state.get('routes');
-	return { globals, navigator };
+	return { globals };
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Explore);

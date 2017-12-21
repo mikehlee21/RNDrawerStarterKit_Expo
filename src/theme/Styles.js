@@ -64,10 +64,9 @@ const Styles = {
   nav: {
     paddingHorizontal: 10,
     alignItems: 'flex-end',
-    backgroundColor:  Colors.nav,
+    backgroundColor: Colors.nav,
     height: Metrics.navBarHeight, 
-    borderBottomColor: Colors.colGray,
-    borderBottomWidth: 1,
+    borderBottomWidth: 0,
   },
   imgLogo: {
     width: Metrics.logoSize,
