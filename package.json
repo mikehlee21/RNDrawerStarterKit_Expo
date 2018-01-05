@@ -4,7 +4,6 @@
 		"dependencies": {
 				"expo": "^24.0.0",
 				"immutable": "^3.8.2",
-				"native-base": "^2.3.5",
 				"react": "16.0.0",
 				"react-native": "https://github.com/expo/react-native/archive/sdk-24.0.0.tar.gz",
 				"react-native-i18n": "^1.0.0",
